@@ -1,4 +1,4 @@
-package Moduł4;
+package Moduł4.Zad6_kalkulator;
 
 import java.util.Scanner;
 
