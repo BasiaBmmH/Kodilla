@@ -1,4 +1,4 @@
-package Moduł4.Zad5;
+package Moduł4.Zad5_kalkulator;
 
 import java.util.LinkedList;
 
