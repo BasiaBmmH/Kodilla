@@ -1,5 +1,19 @@
 package Moduł4.Zad2;
+/*
+Zadanie: zduplikowane zamówienia
+Tym razem w ramach zadania utrwalającego wiedzę zajmiemy się rozwiązaniem istotnego problemu.
 
+Wyobraź sobie sytuację, w której okazuje się, że kod napisany przez dewelopera z innej firmy przechowuje zduplikowane wartości dotyczące zamówień w sklepie internetowym. Przez to wysyłane są czasem dwa produkty zamiast jednego.
+
+Z tego, co wiadomo, developer użył ArrayList do przechowywania numerów zamówienia. Czy jest to dobry pomysł?
+
+Twoim zadaniem jest wykonanie własnej implementacji przechowywania numerów zamówień. Pamiętaj, aby
+
+
+
+
+
+ */
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;

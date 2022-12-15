@@ -5,7 +5,7 @@ import java.util.LinkedList;
 public class Main {
     public static void main(String[] args) {
         LinkedList<Clock> clocks = new LinkedList<>();
-
+        // TODO Zmienić na bezpośrednie wywołanie jak w poprzednim zadaniu
         Clock clock0 = new Clock(12, 22);
         Clock clock1 = new Clock(1, 31);
         Clock clock2 = new Clock(7, 20);
@@ -22,8 +22,9 @@ public class Main {
         clocks.add(clock5);
         clocks.add(clock6);
 
-        for (int i = 0; i < clocks.size(); i++) {
-            clocks.get(i).changeTime(clocks.get(i));
+        for (Clock value : clocks) {
+            Clock clock = value.changeTime(value);
+            System.out.println(clock.getHour() + ":" + clock.getMinute());
         }
 
 
@@ -31,8 +32,8 @@ public class Main {
 }
 
 class Clock {
-    private int hour;
-    private int minute;
+    private final int hour;
+    private final int minute;
 
 
     public Clock(int hour, int minute) {
@@ -48,22 +49,24 @@ class Clock {
         return minute;
     }
 
-    public void changeTime(Clock clock) {
+    public Clock changeTime(Clock clock) {
         int h = clock.getHour();
         int min = clock.getMinute();
-        if (min == 59 && h != 24) {
+
+        if (h > 23 || h < 0 || min > 59 || min < 0) {
+            return new Clock(0, 0);
+        }
+
+        if (min == 59 && h != 23) {
             h++;
             min = 0;
-        } else if (h == 24 && min == 59) {
+        } else if (h == 23 && min == 59) {
             h = 1;
-            min = 0;
-        } else if (min == 59) {
-            h++;
             min = 0;
         } else {
             min++;
         }
-        System.out.println(h + ":" + min);
+        return new Clock(h, min);
     }
 
 }

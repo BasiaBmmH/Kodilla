@@ -15,7 +15,7 @@ public class Main {
 
         Student johnDoe = new Student("John", "Doe");
         Grade mathGrade = new Grade(5, "Math");
-        Grade mathGrade2 = new Grade(3, "Math");
+        Grade mathGrade2 = new Grade(4, "Math");
         Grade biologyGrade = new Grade(5, "Biology");
         addGrade(mathGrade, johnDoe);
         addGrade(mathGrade2, johnDoe);
@@ -55,13 +55,21 @@ class Student {
         this.grades = grades;
     }
 
-//    int getGradeAverage(String course) {
-//        // TODO impelment average
-//
-//        course.getGrades();
-//
-//        return 0;
-//    }
+    double getGradeAverage(String course) {
+        // TODO impelment average
+        HashMap<String, List<Integer>> grades = getGrades();
+        System.out.println(grades);
+        List<Integer> courseGrades = grades.get(course);
+        System.out.println("Course grades:" + courseGrades);
+        int sum = 0;
+        for (int i = 0; i < courseGrades.size(); i++) {
+            sum += courseGrades.get(i);
+        }
+
+        double average = (double) sum / courseGrades.size();
+        BigDecimal bigDecimal = new BigDecimal(average);
+        return bigDecimal.setScale(2, RoundingMode.HALF_UP).doubleValue();
+    }
 }
 
 class Grade {
