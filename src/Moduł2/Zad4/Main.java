@@ -4,6 +4,8 @@ package Moduł2.Zad4;
 // stwórz program z użyciem HashMap, który będzie przechowywał dane uczniów oraz ich ocen.
 // Program ma wyświetlać średnią arytmetyczną ocen każdego ucznia.
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -19,6 +21,7 @@ public class Main {
         addGrade(mathGrade2, johnDoe);
         addGrade(biologyGrade, johnDoe);
         System.out.println(johnDoe.getGrades());
+        System.out.println(johnDoe.getGradeAverage("Math"));
 
     }
 

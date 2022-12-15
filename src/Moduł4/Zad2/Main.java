@@ -12,6 +12,7 @@ public class Main {
         orders.put(1, Collections.singletonList("sth1, sth1"));
         orders.put(2, Collections.singletonList("sth2, sth2"));
         orders.put(3, Collections.singletonList("sth3, sth3"));
+        orders.put(1, Collections.singletonList("sth3, sth3"));
 
         System.out.println("ilosc zamwien: " + orders.size());
         System.out.println("numery zamowien: ");
