@@ -21,7 +21,7 @@ public class Main {
         );
 
         for (Book book : booksSet
-        ) {neew
+        ) {
             if (book.getReleaseDate().getYear() < 2010) {
                 System.out.println(book.getTitle());
             }
