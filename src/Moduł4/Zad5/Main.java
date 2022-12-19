@@ -4,7 +4,8 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        List clocks = new LinkedList<>(
+
+        List<Clock> clocks = new LinkedList<>(
                 Arrays.asList(
                         new Clock(12, 22),
                         new Clock(1, 31),
@@ -16,19 +17,16 @@ public class Main {
                 )
         );
 
-        for (Object value : clocks) {
-            Clock clock = Clock.changeTime((Clock) value);
+        for (Clock value : clocks) {
+            Clock clock = Clock.changeTime(value);
             System.out.println(clock.getHour() + ":" + clock.getMinute());
         }
-
-
     }
 }
 
 class Clock {
     private final int hour;
     private final int minute;
-
 
     public Clock(int hour, int minute) {
         this.hour = hour;
