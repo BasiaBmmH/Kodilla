@@ -1,4 +1,4 @@
-package Moduł0;
+package Modul0;
 
 public class Uzytkownik {
     public static void main(String[] args) {

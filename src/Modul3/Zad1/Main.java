@@ -1,9 +1,7 @@
-package Moduł3.Zad1;
+package Modul3.Zad1;
 
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -20,8 +18,7 @@ public class Main {
                 )
         );
 
-        for (Book book : booksSet
-        ) {
+        for (Book book : booksSet) {
             if (book.getReleaseDate().getYear() < 2010) {
                 System.out.println(book.getTitle());
             }
@@ -63,13 +60,19 @@ class Book {
         return releaseDate.getYear();
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, authorsName, authorsSurname, releaseDate);
+    }
+
+    @Override
     public boolean equals(Object o) {
-        Book b = (Book) o;
-        return (title.equals((b.getTitle()))) &&
-                (authorsName.equals((b.getAuthorsName()))) &&
-                (authorsSurname.equals((b.getAuthorsSurname()))) &&
-                (releaseDate.getYear() == b.getReleaseDate().getYear()) &&
-                (releaseDate.getMonth() == b.getReleaseDate().getMonth()) &&
-                (releaseDate.getDayOfMonth() == b.getReleaseDate().getDayOfMonth());
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return Objects.equals(title, book.title) &&
+                Objects.equals(authorsName, book.authorsName) &&
+                Objects.equals(authorsSurname, book.authorsSurname) &&
+                Objects.equals(releaseDate, book.releaseDate);
     }
 }

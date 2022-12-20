@@ -1,4 +1,4 @@
-package Moduł0.User1;
+package Modul0.User1;
 
 class User {
 

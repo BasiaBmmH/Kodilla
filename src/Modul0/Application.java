@@ -1,4 +1,4 @@
-package Moduł0;
+package Modul0;
 
 class CalculatorOdejmowanie {
     public double odejmowanie(double a, double b) {
