@@ -17,7 +17,7 @@ public class Main {
             System.out.println("sumaA: " + sumaA);
             System.out.println("sumaB: " + sumaB);
             counter++;
-            System.out.println("Numer przebiegu peli: " + counter);
+            System.out.println("Numer przebiegu pętli: " + counter);
         }
         System.out.println("sumaA < sumaB " + sumaA + " < " + sumaB);
 

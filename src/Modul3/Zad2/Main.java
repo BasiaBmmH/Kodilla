@@ -18,26 +18,29 @@ public class Main {
         books.offer(theBook3);
         books.offer(theBook4);
         books.offer(theBook5);
+        System.out.println("Books in library: " + books.size());
 
-        Delete.delete(books);
-    }
-}
+        Book lastBook = null;
+//        int size = books.size();
+//        for (int i = 0; i < size; i++) {
+//            lastBook = books.pop();
+//        }
 
-class Delete {
-    public static void delete(Deque<Book> books) {
+//        for (Book book : books) {
+//            lastBook = book;
+//            books.remove(lastBook);
+//        }
+        Iterator<Book> iterator = books.iterator();
 
-        System.out.println("Poczatkowy rozmar stosu: " + books.size());
-
-        while (books.size() > 0) {
-            books.poll();
-            if (books.size() == 1) {
-                System.out.println("Ostatnia usunieta pozycja: " + books.poll());
-            }
+        while (iterator.hasNext()) {
+            lastBook = iterator.next();
+            books.remove(lastBook);
         }
-        System.out.println("Koncowy rozmiar stosu: " + books.size());
+
+        System.out.println("Books in library after remove: " + books.size());
+        System.out.println("Last removed book: " + lastBook);
     }
 }
-
 class Book {
 
     private String title;
@@ -65,10 +68,6 @@ class Book {
 
     public int getYear() {
         return year;
-    }
-
-    public void delete() {
-
     }
 
 }
