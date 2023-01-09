@@ -5,7 +5,7 @@ import java.lang.*;
 import java.io.*;
 import java.time.*;
 
-class Book {
+public class Book {
 
     String title;
     String author;
