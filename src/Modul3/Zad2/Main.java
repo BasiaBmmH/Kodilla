@@ -19,9 +19,22 @@ public class Main {
         books.offer(theBook4);
         books.offer(theBook5);
 
+        Delete.delete(books);
+    }
+}
 
+class Delete {
+    public static void delete(Deque<Book> books) {
 
+        System.out.println("Poczatkowy rozmar stosu: " + books.size());
 
+        while (books.size() > 0) {
+            books.poll();
+            if (books.size() == 1) {
+                System.out.println("Ostatnia usunieta pozycja: " + books.poll());
+            }
+        }
+        System.out.println("Koncowy rozmiar stosu: " + books.size());
     }
 }
 
@@ -39,7 +52,7 @@ class Book {
 
     @Override
     public String toString() {
-        return "Title: \"" + title + "\", author: " + author + ", (" + year + ")";
+        return "Title: \"" + title + "\", author: " + author + ", " + year;
     }
 
     public String getTitle() {
