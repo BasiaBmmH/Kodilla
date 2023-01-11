@@ -56,10 +56,6 @@ class Book {
         return releaseDate;
     }
 
-    public int hashCode() {
-        return releaseDate.getYear();
-    }
-
     @Override
     public int hashCode() {
         return Objects.hash(title, authorsName, authorsSurname, releaseDate);

@@ -1,5 +1,17 @@
 package Modul3.Zad4;
 
+/*
+
+Zadanie: Litery wężykiem!
+Zadanie składa się z dwóch części. Należy je zrealizować przy pomocy wewnętrznego edytora Kodilla w ramach jednego projektu.
+
+Część 2
+
+
+
+Rozwiązane zadanie wyślij do Mentora.
+ */
+
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
@@ -19,5 +31,38 @@ public class Main {
         AGroupHolder aGroupHolder = aWordsSeparator(aWordsDeque);
         System.out.println(aGroupHolder);
         System.out.println("Deque results: " + aWordsDeque);
+    }
+
+    public static AGroupHolder aWordsSeparator(Deque<String> aWordsDeque) {
+        ArrayList<String> evenAWords = new ArrayList<>();
+        ArrayList<String> oddAWords = new ArrayList<>();
+        for (String word : aWordsDeque) {
+// elvis operator           warunek ? jeśli warunek prawidłowy : jeśli nieprawdłowy
+            if(word.length() % 2 == 0){
+                evenAWords.add(word);
+            }else {
+                oddAWords.add(word);
+            }
+        }
+
+        return new AGroupHolder(evenAWords, oddAWords);
+    }
+}
+
+class AGroupHolder {
+    ArrayList<String> evenAWords;
+    ArrayList<String> oddAWords;
+
+    public AGroupHolder(ArrayList<String> evenAWords, ArrayList<String> oddAWords) {
+        this.evenAWords = evenAWords;
+        this.oddAWords = oddAWords;
+    }
+
+    public ArrayList<String> getEvenAWords() {
+        return evenAWords;
+    }
+
+    public ArrayList<String> getOddAWords() {
+        return oddAWords;
     }
 }

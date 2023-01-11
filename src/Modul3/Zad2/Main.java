@@ -2,11 +2,17 @@ package Modul3.Zad2;
 
 import java.util.*;
 
+/*
+
+następnie usuwa wszystkie książki,
+wyświetla, która książka została usunięta ze stosu jako ostatnia.
+
+ */
+
 public class Main {
     public static void main(String[] args) {
 
         Deque<Book> books = new ArrayDeque<>();
-
         Book theBook1 = new Book("The Witcher", "Andrzej Sapkowski", 1986);
         Book theBook2 = new Book("Kłamca", "Jakub Ćwiek", 2005);
         Book theBook3 = new Book("Szamański Blues", "Aneta Jadowska", 2016);

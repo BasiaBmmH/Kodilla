@@ -2,6 +2,17 @@ package Modul3.Zad3;
 
 import java.util.Random;
 
+/*
+Napisz program, który będzie posiadał:
+
+pętlę while, wewnątrz której:
+losujemy liczbę typu int z zakresu 0-9 i dodajemy ją do zmiennej sumaA,
+losujemy liczbę typu int z zakresu 0-49 i dodajemy ją do zmiennej sumaB.
+Pętlę wykonuj tak długo, jak długo spełniony jest warunek sumaA > sumaB.
+
+W każdej iteracji wyświetl numer przebiegu pętli oraz aktualne wartości obu zmiennych.
+ */
+
 public class Main {
     public static void main(String[] args) {
 
